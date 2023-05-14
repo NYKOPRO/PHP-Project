@@ -1,0 +1,13 @@
+@mixin size-center($width, $height) {
+    width: $width;
+    height: $height;
+    position: absolute;
+    top: calc(50% - (#{$height}/2));
+    left: calc(50% - (#{$width}/2));
+}
+
+@mixin display($display, $align, $justify) {
+    display: $display;
+    align-items: $align;
+    justify-content: $justify;
+}

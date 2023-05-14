@@ -1,0 +1,169 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+main {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+input {
+  z-index: 1;
+}
+
+p {
+  font-size: 20px;
+}
+
+.header {
+  width: 100%;
+  padding: 8px 12px 8px 0;
+  background-color: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  flex: 0 0 40px;
+  overflow: hidden;
+}
+
+.header_titles,
+.header_icons,
+.footer_links,
+.footer_medias {
+  display: flex;
+}
+
+.header_item {
+  margin: 0 0 0 18px;
+  font-size: 18px;
+}
+
+.header_title {
+  border-right: 3px solid #333;
+  padding: 0 12px;
+}
+
+.header_title:nth-of-type(6) {
+  border-right: none;
+  padding: 0 12px;
+}
+
+.header_title:hover {
+  backdrop-filter: brightness(90%);
+}
+
+.header_item:hover, .header_title:hover {
+  cursor: pointer;
+}
+
+.header_title_link:link,
+.header_title_link:hover,
+.header_title_link:active,
+.header_title_link:visited {
+  text-decoration: none;
+  color: #333;
+}
+
+.header_title_link {
+  font-size: 20px;
+}
+
+.footer {
+  width: 100%;
+  padding: 8px 80px;
+  background-color: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 0 1 40px;
+  box-sizing: border-box;
+}
+
+.footer_link {
+  margin: 0 18px 0 0;
+}
+
+.footer_media {
+  margin: 0 0 0 18px;
+}
+
+.homepage,
+.addition,
+.soustraction,
+.multiplication,
+.division,
+.mixed {
+  flex: 1 1 auto;
+}
+
+.addition_calc,
+.soustraction_calc,
+.multiplication_calc,
+.division_calc,
+.mixed_calc {
+  width: 600px;
+  height: 300px;
+  position: absolute;
+  top: calc(50% - (300px/2));
+  left: calc(50% - (600px/2));
+  border: 3px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.actual {
+  display: flex;
+  align-items: center;
+}
+
+.hiddenResult {
+  display: none;
+}
+
+.question {
+  width: 250px;
+  height: 35px;
+  position: absolute;
+  top: calc(50% - (35px/2));
+  left: calc(50% - (250px/2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#calc_1, #calc_2, #calc_3, #calc_4,
+#calc_5, #calc_6, #calc_7, #calc_8,
+#calc_9, #calc_10, #text_fin,
+#input_1, #input_2, #input_3, #input_4,
+#input_5, #input_6, #input_7, #input_8,
+#input_9, #input_10 {
+  display: none;
+}
+
+.button_submit {
+  display: none;
+}
+
+.button_next {
+  display: none;
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+}
+
+.fin {
+  width: 300px;
+  height: 150px;
+  position: absolute;
+  top: calc(50% - (150px/2));
+  left: calc(50% - (300px/2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
