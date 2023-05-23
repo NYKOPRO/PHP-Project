@@ -1,5 +1,5 @@
 <?php
-function create_add(int $nbr, string $type)
+function create_mul(int $nbr, string $type)
 {
     $tout = "";
     for ($i = 1; $i <= $nbr; $i++) {
@@ -15,14 +15,14 @@ function create_add(int $nbr, string $type)
                     break;
 
                 case 2:
-                    $calc = "$calc + $number";
-                    $reponse = $reponse + $number;
+                    $calc = "$calc * $number";
+                    $reponse = $reponse * $number;
                     $second = $number;
                     break;
 
                 case 3:
-                    $calc = "$calc + $number";
-                    $reponse = $reponse + $number;
+                    $calc = "$calc * $number";
+                    $reponse = $reponse * $number;
                     $third = $number;
                     break;
 

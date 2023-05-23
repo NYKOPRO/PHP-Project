@@ -31,15 +31,9 @@ p {
 }
 
 .header_titles,
-.header_icons,
 .footer_links,
 .footer_medias {
   display: flex;
-}
-
-.header_item {
-  margin: 0 0 0 18px;
-  font-size: 18px;
 }
 
 .header_title {
@@ -54,9 +48,6 @@ p {
 
 .header_title:hover {
   backdrop-filter: brightness(90%);
-}
-
-.header_item:hover, .header_title:hover {
   cursor: pointer;
 }
 
@@ -91,20 +82,11 @@ p {
   margin: 0 0 0 18px;
 }
 
-.homepage,
-.addition,
-.soustraction,
-.multiplication,
-.division,
-.mixed {
+.main {
   flex: 1 1 auto;
 }
 
-.addition_calc,
-.soustraction_calc,
-.multiplication_calc,
-.division_calc,
-.mixed_calc {
+.main_calc {
   width: 600px;
   height: 300px;
   position: absolute;
@@ -116,13 +98,15 @@ p {
   justify-content: center;
 }
 
+.results {
+  font-family: monospace;
+  font-size: 24px;
+  margin-left: 15px;
+}
+
 .actual {
   display: flex;
   align-items: center;
-}
-
-.hiddenResult {
-  display: none;
 }
 
 .question {
@@ -136,21 +120,15 @@ p {
   justify-content: center;
 }
 
-#calc_1, #calc_2, #calc_3, #calc_4,
-#calc_5, #calc_6, #calc_7, #calc_8,
-#calc_9, #calc_10, #text_fin,
-#input_1, #input_2, #input_3, #input_4,
-#input_5, #input_6, #input_7, #input_8,
-#input_9, #input_10 {
-  display: none;
-}
-
-.button_submit {
+.question > *,
+.hidden,
+.text_fin,
+.button_submit,
+.button_next {
   display: none;
 }
 
 .button_next {
-  display: none;
   position: absolute;
   bottom: 25px;
   right: 25px;
