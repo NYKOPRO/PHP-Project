@@ -11,7 +11,7 @@
 </head>
 
 <body class="results">
-    <h1>There are your results!</h1>
+    <h1>Voici vos résultats !</h1>
     <?php
     $type = $_POST["type"];
     $nbr = $_POST["nbr"];
@@ -19,8 +19,6 @@
     for ($i = 1; $i <= $nbr; $i++) {
         $calcul = $_POST["calcul_$i"];
         $rep_user = $_POST["rep_user_$i"];
-        $rep = "rep_$i";
-        $string = "1 + 2 + 3";
         $first = $_POST["first_$i"];
         $second = $_POST["second_$i"];
         $third = $_POST["third_$i"];
@@ -80,31 +78,37 @@
                     case $first_signe == "+" && $second_signe == "+":
                         $tot = $first + $second + $third;
                         $reel_tot = $first + $second + $third;
+                        $reel_rep_user = $rep_user;
                         break;
 
                     case $first_signe == "+" && $second_signe == "-":
                         $tot = $first + $second - $third;
                         $reel_tot = $first + $second - $third;
+                        $reel_rep_user = $rep_user;
                         break;
 
                     case $first_signe == "-" && $second_signe == "+":
                         $tot = $first - $second + $third;
                         $reel_tot = $first - $second + $third;
+                        $reel_rep_user = $rep_user;
                         break;
 
                     case $first_signe == "-" && $second_signe == "-":
                         $tot = $first - $second - $third;
                         $reel_tot = $first - $second - $third;
+                        $reel_rep_user = $rep_user;
                         break;
 
                     case $first_signe == "*" && $second_signe == "+":
                         $tot = $first * $second + $third;
                         $reel_tot = $first * $second + $third;
+                        $reel_rep_user = $rep_user;
                         break;
 
                     case $first_signe == "*" && $second_signe == "-":
                         $tot = $first * $second - $third;
                         $reel_tot = $first * $second - $third;
+                        $reel_rep_user = $rep_user;
                         break;
 
                     case $first_signe == "/" && $second_signe == "+":
@@ -112,6 +116,12 @@
                         $den = $second;
                         $tot = $num . "/" . $den;
                         $reel_tot = $num / $den;
+                        $new_rep_user = explode("/", $rep_user);
+                        if (count($new_rep_user) == 1) {
+                            $reel_rep_user = $new_rep_user[0];
+                        } else {
+                            $reel_rep_user = $new_rep_user[0] / $new_rep_user[1];
+                        }
                         break;
 
                     case $first_signe == "/" && $second_signe == "-":
@@ -119,6 +129,12 @@
                         $den = $second;
                         $tot = $num . "/" . $den;
                         $reel_tot = $num / $den;
+                        $new_rep_user = explode("/", $rep_user);
+                        if (count($new_rep_user) == 1) {
+                            $reel_rep_user = $new_rep_user[0];
+                        } else {
+                            $reel_rep_user = $new_rep_user[0] / $new_rep_user[1];
+                        }
                         break;
 
                     default:
@@ -126,11 +142,11 @@
                         break;
                 }
                 echo $calcul . " = " . $tot . "</br>" . "votre réponse : " . $rep_user . "</br>";
-                if ($reel_tot == $rep_user) {
-                    echo "juste (=" . "</br>";
+                if ($reel_tot == $reel_rep_user) {
+                    echo "</br>";
                     $pourcentage++;
                 } else {
-                    echo "faux )=" . "</br>";
+                    echo "</br>";
                 }
                 if ($i == $nbr) {
                     $pourcentage = $pourcentage / $nbr * 100;
@@ -147,26 +163,45 @@
                         $num = ($first * $fourth) + ($second * $third);
                         $den = $second * $fourth;
                         $tot = "$num/$den";
+                        $reel_tot = $num / $den;
                         break;
 
                     case "-":
                         $num = ($first * $fourth) - ($second * $third);
                         $den = $second * $fourth;
                         $tot = "$num/$den";
+                        $reel_tot = $num / $den;
                         break;
 
                     case "*":
                         $num = $first * $third;
                         $den = $second * $fourth;
                         $tot = "$num/$den";
+                        $reel_tot = $num / $den;
                         break;
 
                     default:
                         echo "ERROR IN 'results.php' 2";
                         break;
                 }
-                echo $first . " : " . $second . " " . $div_signe . " " . $third . " : " . $fourth . " = " . $tot . " : " . $type . "</br>";
-                // echo $_POST[$calcul] . " = " . $_POST[$rep] . " -> votre réponse : " . $_POST[$rep_user] . "</br>";
+                $new_rep_user = explode("/", $rep_user);
+                if (count($new_rep_user) == 1) {
+                    $reel_rep_user = $new_rep_user[0];
+                } else {
+                    $reel_rep_user = $new_rep_user[0] / $new_rep_user[1];
+                }
+                echo $calcul . " = " . $tot . "</br>" . "votre réponse : " . $rep_user . "</br>";
+                if ($reel_tot == $reel_rep_user) {
+                    echo "juste (=" . "</br>";
+                    $pourcentage++;
+                } else {
+                    echo "faux )=" . "</br>";
+                }
+                if ($i == $nbr) {
+                    $pourcentage = $pourcentage / $nbr * 100;
+                    $arrondi = round($pourcentage * 2) / 2;
+                    echo $arrondi . "% de bonne réponse.";
+                }
                 break;
 
             default:

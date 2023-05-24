@@ -16,6 +16,7 @@ function makeNextVisible(){
     document.getElementById(id).style.display = 'initial';
     document.getElementById(id_2).style.display = 'none';
     document.getElementById(id_input).style.display = 'initial';
+    document.getElementById(id_input).focus();
     document.getElementById(id_input_2).style.display = 'none';
   }else{
     var id = 'calc_' + i;

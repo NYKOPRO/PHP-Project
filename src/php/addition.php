@@ -24,7 +24,7 @@
       <?php include 'templates/footer.php';
       echo $footer; ?>
     </section>
-    <section calss="decoration">
+    <section class="decoration">
       <?php include 'templates/decoration.php';
       echo $decoration; ?>
     </section>

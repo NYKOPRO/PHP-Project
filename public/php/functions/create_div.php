@@ -4,19 +4,16 @@ function create_div(int $nbr, string $type)
     $tout = "";
     for ($i = 1; $i <= $nbr; $i++) {
         $calc = "";
-        $reponse = 0;
         for ($j = 1; $j <= 4; $j++) {
             $number = rand(1, 10);
             switch ($j) {
                 case 1:
                     $calc = "$number";
-                    $reponse = $number;
                     $first = $number;
                     break;
 
                 case 2:
                     $calc = "$calc / $number";
-                    $reponse = $reponse / $number;
                     $second = $number;
                     break;
 
@@ -50,7 +47,6 @@ function create_div(int $nbr, string $type)
 
                 case 4:
                     $calc = "$calc / $number";
-                    $reponse = $reponse / $number;
                     $fourth = $number;
                     break;
 
@@ -60,7 +56,6 @@ function create_div(int $nbr, string $type)
             }
         }
         $id = "calc_$i";
-        $id_rep = "rep_$i";
         $id_rep_user = "rep_user_$i";
         $id_input = "input_$i";
         $calcul = "calcul_$i";
@@ -74,7 +69,6 @@ function create_div(int $nbr, string $type)
         $paragraphe =
             "<div class=\"question\"><p id=\"$id\">$calc</p>
             <input id=\"$id_input\" type=\"text\" name=\"$id_rep_user\">
-            <input class=\"hidden\" type=\"text\" name=\"$id_rep\" value=\"$reponse\">
             <input class=\"hidden\" type=\"text\" name=\"$calcul\" value=\"$calc\">"
             . $set_first . $set_second . $set_third . $set_fourth . $set_div_signe . "</div>";
         $tout = $tout . $paragraphe;

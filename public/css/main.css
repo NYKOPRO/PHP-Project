@@ -2,12 +2,33 @@ html,
 body {
   height: 100%;
   margin: 0;
+  font-family: "Recoleta";
 }
 
 main {
+  height: 100%;
+  margin: 0;
   display: flex;
   flex-flow: column;
+  background-color: lightblue;
+  font-family: "Recoleta";
+}
+
+main::before,
+main::after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: "";
+  width: 100%;
   height: 100%;
+  z-index: 0;
+  opacity: 40%;
+}
+
+main::before {
+  background: #8C8C8C;
+  filter: url(#noiseFilter);
 }
 
 input {
@@ -21,29 +42,35 @@ p {
 .header {
   width: 100%;
   padding: 8px 12px 8px 0;
-  background-color: aliceblue;
   display: flex;
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
   flex: 0 0 40px;
   overflow: hidden;
+  z-index: 1;
 }
 
+.title,
 .header_titles,
 .footer_links,
 .footer_medias {
   display: flex;
 }
 
-.header_title {
-  border-right: 3px solid #333;
-  padding: 0 12px;
+.header_title_primary {
+  margin-left: 50px;
 }
 
-.header_title:nth-of-type(6) {
+.header_title {
+  border-right: 3px solid #333;
+  padding: 0 32px;
+}
+
+.header_title:nth-of-type(5) {
   border-right: none;
-  padding: 0 12px;
+  padding: 0 32px;
+  margin-right: 50px;
 }
 
 .header_title:hover {
@@ -66,12 +93,12 @@ p {
 .footer {
   width: 100%;
   padding: 8px 80px;
-  background-color: aliceblue;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex: 0 1 40px;
   box-sizing: border-box;
+  z-index: 1;
 }
 
 .footer_link {
@@ -84,6 +111,11 @@ p {
 
 .main {
   flex: 1 1 auto;
+}
+
+.main > div p {
+  font-size: 24px;
+  z-index: 2;
 }
 
 .main_calc {
@@ -144,4 +176,8 @@ p {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+.decoration {
+  height: 0;
 }
