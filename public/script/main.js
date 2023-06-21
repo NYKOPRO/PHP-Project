@@ -3,6 +3,7 @@ function makeVisible(){
   document.getElementById('calc_1').style.display = 'initial';
   document.getElementById('input_1').style.display = 'initial';
   document.getElementById('actual').style.display = 'none';
+  document.getElementById('input_1').focus();
 }
 var i = 1;
 function makeNextVisible(){
@@ -28,3 +29,21 @@ function makeNextVisible(){
     document.getElementById('text_fin').style.display = 'initial';
   }
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+  var percent = document.getElementById('percent').value;
+  var pourcent = parseInt(percent);
+  if(pourcent >= 0 && pourcent < 50) {
+    document.querySelector('body').style.backgroundColor = 'red';
+  } else {
+    if (pourcent >= 50 && pourcent < 80) {
+      document.querySelector('body').style.backgroundColor = 'yellow';
+    } else {
+      if (pourcent => 80 && pourcent <=100) {
+        document.querySelector('body').style.backgroundColor = 'lightgreen';
+      }
+    }
+  }
+});
+    
+    

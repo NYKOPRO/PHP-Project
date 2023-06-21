@@ -60,6 +60,12 @@ p {
 
 .header_title_primary {
   margin-left: 50px;
+  padding: 0 32px;
+}
+
+.header_title_primary:hover {
+  border-right: 3px solid #333;
+  border-left: 3px solid #333;
 }
 
 .header_title {
@@ -73,7 +79,17 @@ p {
   margin-right: 50px;
 }
 
-.header_title:hover {
+.header_title:nth-of-type(5):hover {
+  border-right: 3px solid #333;
+  margin-right: 47px;
+}
+
+.header_title:nth-of-type(1):hover {
+  border-left: 3px solid #333;
+}
+
+.header_title:hover,
+.header_title_primary:hover {
   backdrop-filter: brightness(90%);
   cursor: pointer;
 }
@@ -118,6 +134,10 @@ p {
   z-index: 2;
 }
 
+.text {
+  margin: 100px 0px 0px 100px;
+}
+
 .main_calc {
   width: 600px;
   height: 300px;
@@ -158,6 +178,7 @@ p {
 .button_submit,
 .button_next {
   display: none;
+  z-index: 1;
 }
 
 .button_next {
@@ -180,4 +201,36 @@ p {
 
 .decoration {
   height: 0;
+}
+
+.reponses {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 50px;
+  place-items: center;
+}
+
+.resultsTitle {
+  text-align: center;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.resultsLeft {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resultsRight {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pourcentage {
+  grid-column-start: 1;
+  grid-column-end: 3;
 }

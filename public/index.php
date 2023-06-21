@@ -19,11 +19,9 @@
     <section class="main">
       <div class="text">
         <h1>Bienvenue sur ce Site !</h1>
-        <p>
-          <?php
-          include 'php/functions/fractions.php';
-          ?>
-        </p>
+        <p>Ici vous allez pouvoir vous entraîner au calcul mental !</p>
+        <p>Ils y a plusieurs types de calculs : addition, soustraction, multiplication, division et une section mixte !</p>
+        <p>Alors cliquer sur un des liens ci-dessus et commencer à calculer !</p>
       </div>
     </section>
     <section class="footer">
